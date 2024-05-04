@@ -24,7 +24,7 @@ const ChapterDetails = () => {
         // Fetch quiz data related to the chapter
         const quizResponse = await apiClient.get(`/quizz/quizzParChapitre/1/${chapterId}`);
         setQuiz(quizResponse.data); // Assuming the response data is the quiz object
-        console.log(quizResponse)
+        console.log(quizResponse.data);
       } catch (error) {
         console.error('Erreur lors de la récupération des données:', error);
       }
@@ -51,12 +51,12 @@ const ChapterDetails = () => {
           </li>
         ))}
       </ul>
-      {/* Display quiz data here */}
-            {/* Example: Displaying the first question */}
-            {/* {quiz && quiz.questions && quiz.questions.length > 0 && (
-              <Link to="/quiz-page">Voulez-vous vous testez?</Link>
-              <p>Votre score actuelle est : </p>
-            )} */}
+            {quiz && quiz.quizz && quiz.quizz.length > 0 && (
+                <div>
+                    <h5>Votre score actuelle est : {quiz.note.score}</h5>
+                    <Link to={`/quiz-page/${chapterId}`}>View Quizz</Link>
+                </div>
+            )}
     </div>
   );
 };
