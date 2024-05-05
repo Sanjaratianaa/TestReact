@@ -51,12 +51,18 @@ const ChapterDetails = () => {
           </li>
         ))}
       </ul>
-            {quiz && quiz.quizz && quiz.quizz.length > 0 && (
+        {quiz ? (
+            quiz.quizz && quiz.quizz.length > 0 ? (
                 <div>
-                    <h5>Votre score actuelle est : {quiz.note.score}</h5>
+                    <h5>Votre score actuel est : {quiz.note.score}</h5>
                     <Link to={`/quiz-page/${chapterId}`}>View Quizz</Link>
                 </div>
-            )}
+            ) : (
+                <div>En cours de chargement...</div>
+            )
+        ) : (
+            <div>En cours de chargement...</div>
+        )}
     </div>
   );
 };
