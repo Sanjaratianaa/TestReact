@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const ChapterDetails = () => {
     const { chapterId } = useParams(); // Extract chapterId from URL parameters
-    console.log(chapterId);
+    // console.log(chapterId);
   const [details, setDetails] = useState(null);
   const [chapitre, setChapitre] = useState(null);
   const [quiz, setQuiz] = useState(null);
@@ -18,7 +18,7 @@ const ChapterDetails = () => {
         const chapterData = await chapterResponse.data;
         
         setChapitre(response.data);
-        console.log(response.data);
+        // console.log(response.data);
         setDetails(chapterData);
 
         // Fetch quiz data related to the chapter

@@ -20,7 +20,7 @@ const ChapterDetailsDetails = () => {
         
         const paragraphesData = await paragraphesResponse.data;
         
-        console.log(chapterData);
+        // console.log(chapterData);
         setChapter(chapterData);
         setParagraphes(paragraphesData);
       } catch (error) {
@@ -37,7 +37,7 @@ const ChapterDetailsDetails = () => {
             idUser: 1, // Replace with the actual user ID
             idChapitre: chapterId,
         });
-        console.log(response);
+        // console.log(response);
         navigate('/liste-chapitres');
     } catch (error) {
         console.error('Error terminating chapter:', error);
